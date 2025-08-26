@@ -450,5 +450,26 @@
         "disable": false,
         "sha256": "2e913a03c75a6121a46a6aaf7b4c4e663397422e9e1551b93143b432dd701dff",
         "url": "https://nexus.microbot.cloud/repository/microbot-plugins/net/runelite/client/plugins/microbot/autochompykillerplugin/1.0.1/autochompykillerplugin-1.0.1.jar"
+    },
+    {
+      "internalName": "CraftHelperPlugin",
+      "name": "Craft Helper",
+      "description": "Will attempt to help with Crafting Pottery and Leather",
+      "tags": [
+        "crafting",
+        "leather",
+        "clay",
+        "pottery"
+      ],
+      "version": "0.1.2",
+      "minClientVersion": "1.9.8",
+      "authors": [
+        "Fire"
+      ],
+      "iconUrl": "",
+      "cardUrl": "",
+      "disable": false,
+      "sha256": "74f9c4d8a2dd5cd6048c38f255d421c9eba253a05a76b628847ae196af364e33",
+      "url": "https://g-fire-oss.github.io/runelite/client/plugins/microbot/crafthelperplugin-0.1.2.jar"
     }
 ]
