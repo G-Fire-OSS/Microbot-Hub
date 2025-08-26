@@ -11,7 +11,7 @@ import net.runelite.client.plugins.microbot.gecooker.enums.LogType;
 
 
 @ConfigGroup("GECooker")
-@ConfigInformation("This plugin cooks the selected cooking item at the Grand Exchange using regular fires and campfires.<br /><br />" + 
+@ConfigInformation("This plugin cooks the selected cooking item at the Grand Exchange using regular fires and campfires.<br /><br />" +
         "If a fire does not already exist, it will create it in the desired location that you select.<br /><br />" +
         "For bugs or feature requests, contact me through Discord (@StickToTheScript).")
 public interface GECookerConfig extends Config {
@@ -69,5 +69,34 @@ public interface GECookerConfig extends Config {
     default boolean sDebug()
     {
         return false;
+    }
+
+    @ConfigSection(
+            name = "Custom Food",
+            description = "Cook a custom food not in the list",
+            position = 2
+    )
+    String customFoodSection = "Custom Food";
+
+    @ConfigItem(
+            keyName = "useCustomFood",
+            name = "Use Custom Food",
+            description = "Enable to cook a custom food",
+            section = customFoodSection,
+            position = 0
+    )
+    default boolean useCustomFood() {
+        return false;
+    }
+
+    @ConfigItem(
+            keyName = "customRawFoodId",
+            name = "Custom Raw Food ID",
+            description = "The item ID of the raw food to cook",
+            section = customFoodSection,
+            position = 1
+    )
+    default int customRawFoodId() {
+        return 2134; // Raw rat meat
     }
 }

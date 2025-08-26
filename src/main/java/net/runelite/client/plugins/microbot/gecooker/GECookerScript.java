@@ -46,7 +46,13 @@ public class GECookerScript extends Script {
     private static List<Integer> FireIDs = Arrays.asList(26185, 49927);
 
     public boolean run(GECookerConfig config) {
-        CookingItem cookingItem = config.sCookItem();
+        final int rawFoodId;
+        if (config.useCustomFood()) {
+            rawFoodId = config.customRawFoodId();
+        } else {
+            rawFoodId = config.sCookItem().getRawItemID();
+        }
+
         LogType logType = config.sLogType();
         GEWorkLocation desiredLocation = config.sLocation();
 
@@ -72,7 +78,7 @@ public class GECookerScript extends Script {
                 return;
             }
 
-            determineState(cookingItem, logType);
+            determineState(rawFoodId, logType);
 
             // If the state is not cooking, then let's reset the variable as we are not expecting an XP drop
             if (state != State.COOKING) {
@@ -88,7 +94,7 @@ public class GECookerScript extends Script {
 
            switch (state) {
             case COOKING:
-                if (Rs2Inventory.count(cookingItem.getRawItemID()) == 0) {
+                if (Rs2Inventory.count(rawFoodId) == 0) {
                     debug("Out of cooking item in inventory");
                     return;
                 }
@@ -113,7 +119,7 @@ public class GECookerScript extends Script {
                         return;
                     } else {
                         debug("Using object on fire");
-                        Rs2Inventory.useItemOnObject(cookingItem.getRawItemID(), fireObject.getId());
+                        Rs2Inventory.useItemOnObject(rawFoodId, fireObject.getId());
                         sleepUntil(() -> !Rs2Player.isMoving() && Rs2Widget.findWidget("How many would you like to cook?", null, false) != null, 5000);
                         sleep(180, 540);
                         Rs2Keyboard.keyPress(KeyEvent.VK_SPACE);
@@ -124,7 +130,7 @@ public class GECookerScript extends Script {
 
             case BANKING:
                 debug("Banking");
-                bank(cookingItem);
+                bank(rawFoodId);
                 break;
 
             case BANKING_FOR_FIRE_SUPPLIES:
@@ -164,12 +170,12 @@ public class GECookerScript extends Script {
     }
 
     // Determine the state of the script
-    private void determineState(CookingItem cookingItem, LogType logType) {
+    private void determineState(int rawFoodId, LogType logType) {
         debug("Determine state");
         // Check each fire spot to see if any of them have a fire ID on them
         if (findFireObject() != null) {
             debug("Fire found");
-            if (Rs2Inventory.hasItem(cookingItem.getRawItemID())) {
+            if (Rs2Inventory.hasItem(rawFoodId)) {
                 debug("Cooking");
                 state = State.COOKING;
             } else {
@@ -217,7 +223,7 @@ public class GECookerScript extends Script {
     }
 
     // Handle all banking actions
-    private void bank(CookingItem cookingItem) {
+    private void bank(int rawFoodId) {
         if (Rs2Bank.openBank()) {
             sleepUntil(Rs2Bank::isOpen);
             debug("Bank is open");
@@ -225,11 +231,11 @@ public class GECookerScript extends Script {
             debug("Items deposited");
             sleep(180, 540);
 
-            Rs2Bank.withdrawAll(cookingItem.getRawItemID());
-            sleepUntil(() -> Rs2Inventory.hasItem(cookingItem.getRawItemID()), 3500);
+            Rs2Bank.withdrawAll(rawFoodId);
+            sleepUntil(() -> Rs2Inventory.hasItem(rawFoodId), 3500);
 
             // Exit if we did not end up finding it.
-            if (!Rs2Inventory.hasItem(cookingItem.getRawItemID())) {
+            if (!Rs2Inventory.hasItem(rawFoodId)) {
                 debug("Could not find cooking item in bank.");
                 Microbot.showMessage("Could not find cooking item in bank.");
                 shutdown();
