@@ -1,8 +1,10 @@
 package net.runelite.client.plugins.microbot.crafthelper;
 
+import com.google.inject.Provides;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
+import net.runelite.client.config.ConfigManager;
 import net.runelite.client.eventbus.Subscribe;
 import net.runelite.client.events.ConfigChanged;
 import net.runelite.client.plugins.Plugin;
@@ -22,18 +24,23 @@ import java.awt.AWTException;
         version = CraftHelperPlugin.version,
         minClientVersion = "1.9.8",
         enabledByDefault = PluginConstants.DEFAULT_ENABLED,
-        isExternal = PluginConstants.IS_EXTERNAL
+        isExternal = PluginConstants.IS_EXTERNAL,
+        cardUrl = "https://chsami.github.io/Microbot-Hub/CraftHelperPlugin/assets/card.png"
 )
 @Slf4j
 public class CraftHelperPlugin extends Plugin {
 
     static final String version = "0.1.2";
 
+    @Inject
     @Getter
-    private final CraftHelperConfig config;
-    private final OverlayManager overlayManager;
-    private final CraftHelperScript craftHelperScript;
-    private final CraftHelperOverlay craftHelperOverlay;
+    private CraftHelperConfig config;
+    @Inject
+    private OverlayManager overlayManager;
+    @Inject
+    private CraftHelperScript craftHelperScript;
+    @Inject
+    private CraftHelperOverlay craftHelperOverlay;
 
 
     public enum State {
@@ -49,12 +56,9 @@ public class CraftHelperPlugin extends Plugin {
     @Setter
     private State currentState;
 
-    @Inject
-    private CraftHelperPlugin(CraftHelperConfig config, OverlayManager overlayManager, CraftHelperScript craftHelperScript, CraftHelperOverlay craftHelperOverlay) {
-        this.config = config;
-        this.overlayManager = overlayManager;
-        this.craftHelperScript = craftHelperScript;
-        this.craftHelperOverlay = craftHelperOverlay;
+    @Provides
+    CraftHelperConfig provideConfig(ConfigManager configManager) {
+        return configManager.getConfig(CraftHelperConfig.class);
     }
 
     @Override
