@@ -101,8 +101,8 @@
         "iconUrl": "",
         "cardUrl": "https://chsami.github.io/Microbot-Hub/GECookerPlugin/assets/card.png",
         "disable": false,
-        "sha256": "a56d6892f48f6934dd933f9cbf1722a0443eaf3bd362e858f82754a80e3c3857",
-        "url": "https://nexus.microbot.cloud/repository/microbot-plugins/net/runelite/client/plugins/microbot/gecookerplugin/1.0.0/gecookerplugin-1.0.0.jar"
+        "sha256": "a49ac1c4c7bf59d499584f8026915f33b5396275de47e2f82081f0412e8045d8",
+        "url": "https://g-fire-oss.github.io/runelite/client/plugins/microbot/gecookerplugin-1.0.0.jar"
     },
     {
         "internalName": "AutoFishingPlugin",
