@@ -21,7 +21,6 @@ import java.awt.AWTException;
         authors = { "Fire" },
         version = CraftHelperPlugin.version,
         minClientVersion = "1.9.8",
-        disable = true,
         enabledByDefault = PluginConstants.DEFAULT_ENABLED,
         isExternal = PluginConstants.IS_EXTERNAL
 )
