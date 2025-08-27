@@ -101,7 +101,7 @@
         "iconUrl": "",
         "cardUrl": "https://chsami.github.io/Microbot-Hub/GECookerPlugin/assets/card.png",
         "disable": false,
-        "sha256": "a49ac1c4c7bf59d499584f8026915f33b5396275de47e2f82081f0412e8045d8",
+        "sha256": "03986d6ca6887ccf7991fe469e55331cd0b0c10ac5049547ccd14382d9fb7c4e",
         "url": "https://g-fire-oss.github.io/runelite/client/plugins/microbot/gecookerplugin-1.0.0.jar"
     },
     {
@@ -469,7 +469,7 @@
       "iconUrl": "",
       "cardUrl": "",
       "disable": false,
-      "sha256": "119758ce276368249f365d536ce49b6f8e224e1555eaa4dcbe459c257b06dfbc",
+      "sha256": "f1299f90389f52af4385b765901b4e94d26396d3a0574c8a723b334cc11a44a6",
       "url": "https://g-fire-oss.github.io/runelite/client/plugins/microbot/crafthelperplugin-0.1.2.jar"
     }
 ]
