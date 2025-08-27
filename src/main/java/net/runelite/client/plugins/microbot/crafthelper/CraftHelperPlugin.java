@@ -17,7 +17,7 @@ import javax.inject.Inject;
 import java.awt.AWTException;
 
 @PluginDescriptor(
-        name = PluginConstants.FIRE + "[Fire] CraftHelper",
+        name = PluginConstants.FIRE + "CraftHelper",
         description = "Will attempt to help with Crafting Pottery and Leather",
         tags = {"crafting", "leather", "clay", "pottery"},
         authors = { "Fire" },

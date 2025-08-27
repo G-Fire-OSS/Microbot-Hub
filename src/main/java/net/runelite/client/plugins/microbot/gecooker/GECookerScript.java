@@ -231,7 +231,7 @@ public class GECookerScript extends Script {
             debug("Items deposited");
             sleep(180, 540);
 
-            Rs2Bank.withdrawAll(rawFoodId);
+            Rs2Bank.withdrawX(rawFoodId, 28);
             sleepUntil(() -> Rs2Inventory.hasItem(rawFoodId), 3500);
 
             // Exit if we did not end up finding it.
