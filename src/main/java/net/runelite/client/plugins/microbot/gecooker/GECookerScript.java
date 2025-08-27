@@ -231,8 +231,21 @@ public class GECookerScript extends Script {
             debug("Items deposited");
             sleep(180, 540);
 
-            Rs2Bank.withdrawX(rawFoodId, 28);
-            sleepUntil(() -> Rs2Inventory.hasItem(rawFoodId), 3500);
+            // Click "Withdraw-X"
+            Rs2Bank.withdrawX(rawFoodId, 1); // Amount doesn't matter, just triggers the action
+
+            // Wait for the dialog to enter amount
+            sleepUntil(() -> Rs2Widget.findWidget("Enter amount", null) != null, 2000);
+
+            if (Rs2Widget.findWidget("Enter amount", null) != null) {
+                debug("Entering amount 28");
+                Rs2Keyboard.typeString("28");
+                sleep(300, 600);
+                Rs2Keyboard.keyPress(KeyEvent.VK_ENTER);
+            }
+
+            // Wait until inventory has 28 items or bank is out of the item
+            sleepUntil(() -> Rs2Inventory.count(rawFoodId) >= 28 || !Rs2Bank.hasItem(rawFoodId), 3500);
 
             // Exit if we did not end up finding it.
             if (!Rs2Inventory.hasItem(rawFoodId)) {
