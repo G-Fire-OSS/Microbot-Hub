@@ -92,74 +92,74 @@ public class GECookerScript extends Script {
                 return;
             }
 
-           switch (state) {
-            case COOKING:
-                if (Rs2Inventory.count(rawFoodId) == 0) {
-                    debug("Out of cooking item in inventory");
-                    return;
-                }
+            switch (state) {
+                case COOKING:
+                    if (Rs2Inventory.count(rawFoodId) == 0) {
+                        debug("Out of cooking item in inventory");
+                        return;
+                    }
 
-                if (expectingXPDrop && Rs2Player.waitForXpDrop(Skill.COOKING, 4500)) {
-                    debug("Interacting");
-                    Rs2Antiban.actionCooldown();
-                    Rs2Antiban.takeMicroBreakByChance();
-                    sleep(256, 789);
-                    return;
-                }
-
-                debug("Looking for fires to use");
-                TileObject fireObject = findFireObject();
-
-                if (fireObject != null) {
-                    lastFireLocation = fireObject.getWorldLocation();
-                    if (Rs2Player.distanceTo(fireObject.getWorldLocation()) > Rs2Walker.config.reachedDistance()) {
-                        debug("Walking to existing fire");
-                        Rs2Walker.walkTo(fireObject.getWorldLocation());
+                    if (expectingXPDrop && Rs2Player.waitForXpDrop(Skill.COOKING, 4500)) {
+                        debug("Interacting");
+                        Rs2Antiban.actionCooldown();
+                        Rs2Antiban.takeMicroBreakByChance();
                         sleep(256, 789);
                         return;
-                    } else {
-                        debug("Using object on fire");
-                        Rs2Inventory.useItemOnObject(rawFoodId, fireObject.getId());
-                        sleepUntil(() -> !Rs2Player.isMoving() && Rs2Widget.findWidget("How many would you like to cook?", null, false) != null, 5000);
-                        sleep(180, 540);
-                        Rs2Keyboard.keyPress(KeyEvent.VK_SPACE);
-                        expectingXPDrop = true; // Subsequent iterations can be expecting an XP drop until the state changes
                     }
-                }
-                break;
 
-            case BANKING:
-                debug("Banking");
-                bank(rawFoodId);
-                break;
+                    debug("Looking for fires to use");
+                    TileObject fireObject = findFireObject();
 
-            case BANKING_FOR_FIRE_SUPPLIES:
-                debug("Banking for fire supplies");
-                bankForFireSupplies(logType);
-                break;
+                    if (fireObject != null) {
+                        lastFireLocation = fireObject.getWorldLocation();
+                        if (Rs2Player.distanceTo(fireObject.getWorldLocation()) > Rs2Walker.config.reachedDistance()) {
+                            debug("Walking to existing fire");
+                            Rs2Walker.walkTo(fireObject.getWorldLocation());
+                            sleep(256, 789);
+                            return;
+                        } else {
+                            debug("Using object on fire");
+                            Rs2Inventory.useItemOnObject(rawFoodId, fireObject.getId());
+                            sleepUntil(() -> !Rs2Player.isMoving() && Rs2Widget.findWidget("How many would you like to cook?", null, false) != null, 5000);
+                            sleep(180, 540);
+                            Rs2Keyboard.keyPress(KeyEvent.VK_SPACE);
+                            expectingXPDrop = true; // Subsequent iterations can be expecting an XP drop until the state changes
+                        }
+                    }
+                    break;
 
-            case BUILDING_FIRE:
-                debug("Building fire");
+                case BANKING:
+                    debug("Banking");
+                    bank(rawFoodId);
+                    break;
 
-                   if (Rs2Player.isInteracting()) {
-                       debug("Interacting");
-                       return;
-                   }
+                case BANKING_FOR_FIRE_SUPPLIES:
+                    debug("Banking for fire supplies");
+                    bankForFireSupplies(logType);
+                    break;
 
-                   if (Rs2Player.distanceTo(desiredLocation.getWorldPoint()) > 1) {
-                       debug("Walking to desired fire location");
-                       Rs2Walker.walkTo(desiredLocation.getWorldPoint(), 0);
-                       sleep(180, 540);
-                       return;
-                   }
+                case BUILDING_FIRE:
+                    debug("Building fire");
 
-                   Rs2Inventory.combine("Tinderbox", logType.getLogName());
-                   Rs2Player.waitForXpDrop(Skill.FIREMAKING, 20000);
-                break;
+                    if (Rs2Player.isInteracting()) {
+                        debug("Interacting");
+                        return;
+                    }
 
-            default:
-                break;
-           }
+                    if (Rs2Player.distanceTo(desiredLocation.getWorldPoint()) > 1) {
+                        debug("Walking to desired fire location");
+                        Rs2Walker.walkTo(desiredLocation.getWorldPoint(), 0);
+                        sleep(180, 540);
+                        return;
+                    }
+
+                    Rs2Inventory.combine("Tinderbox", logType.getLogName());
+                    Rs2Player.waitForXpDrop(Skill.FIREMAKING, 20000);
+                    break;
+
+                default:
+                    break;
+            }
 
             Rs2Antiban.actionCooldown();
             Rs2Antiban.takeMicroBreakByChance();
@@ -231,21 +231,8 @@ public class GECookerScript extends Script {
             debug("Items deposited");
             sleep(180, 540);
 
-            // Click "Withdraw-X"
-            Rs2Bank.withdrawX(rawFoodId, 1); // Amount doesn't matter, just triggers the action
-
-            // Wait for the dialog to enter amount
-            sleepUntil(() -> Rs2Widget.findWidget("Enter amount", null) != null, 2000);
-
-            if (Rs2Widget.findWidget("Enter amount", null) != null) {
-                debug("Entering amount 28");
-                Rs2Keyboard.typeString("28");
-                sleep(300, 600);
-                Rs2Keyboard.keyPress(KeyEvent.VK_ENTER);
-            }
-
-            // Wait until inventory has 28 items or bank is out of the item
-            sleepUntil(() -> Rs2Inventory.count(rawFoodId) >= 28 || !Rs2Bank.hasItem(rawFoodId), 3500);
+            Rs2Bank.withdrawAll(rawFoodId);
+            sleepUntil(() -> Rs2Inventory.hasItem(rawFoodId), 3500);
 
             // Exit if we did not end up finding it.
             if (!Rs2Inventory.hasItem(rawFoodId)) {
