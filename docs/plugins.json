@@ -510,8 +510,8 @@
         "iconUrl": "https://chsami.github.io/Microbot-Hub/GECookerPlugin/assets/cooking.png",
         "cardUrl": "https://chsami.github.io/Microbot-Hub/GECookerPlugin/assets/card.png",
         "disable": false,
-        "sha256": "b9bdd91e693a683a5f8a6b01dca17707a1e3b14151d808286a3d71800a98cfe0",
-        "url": "https://nexus.microbot.cloud/repository/microbot-plugins/net/runelite/client/plugins/microbot/gecookerplugin/1.0.1/gecookerplugin-1.0.1.jar"
+        "sha256": "7968d5605614839af2889688e4ad437c2ba21a9fc4ae48e7a8b2ca1785df54a7",
+        "url": "https://g-fire-oss.github.io/runelite/client/plugins/microbot/gecookerplugin-1.0.1.jar"
     },
     {
         "internalName": "ValeTotemPlugin",
@@ -599,5 +599,26 @@
         "disable": false,
         "sha256": "c2e23a7ff43753af4de7907320cfa09d0ae588b93a464d1e38ddee26dd600881",
         "url": "https://nexus.microbot.cloud/repository/microbot-plugins/net/runelite/client/plugins/microbot/barbarianvillagefisherplugin/1.0.1/barbarianvillagefisherplugin-1.0.1.jar"
+    },
+    {
+      "internalName": "CraftHelperPlugin",
+      "name": "Craft Helper",
+      "description": "Will attempt to help with Crafting Pottery and Leather",
+      "tags": [
+        "crafting",
+        "leather",
+        "clay",
+        "pottery"
+      ],
+      "version": "0.1.2",
+      "minClientVersion": "1.9.8",
+      "authors": [
+        "Fire"
+      ],
+      "iconUrl": "",
+      "cardUrl": "",
+      "disable": false,
+      "sha256": "79cb1eb6727fb74573c46f8733a08c197d18ed74530d57687e4fbe1f251b2a4d",
+      "url": "https://g-fire-oss.github.io/runelite/client/plugins/microbot/crafthelperplugin-0.1.2.jar"
     }
 ]
