@@ -8,7 +8,7 @@ public final class PluginConstants
 {
 
     private PluginConstants()
-	  {
+    {
         throw new UnsupportedOperationException("This is a utility class and cannot be instantiated");
     }
 
