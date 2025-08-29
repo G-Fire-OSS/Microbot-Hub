@@ -1,172 +1,5 @@
 [
     {
-        "internalName": "PestControlPlugin",
-        "name": "Pest Control",
-        "description": "Supports all boats, portals, and shields.",
-        "tags": [
-            "pest control",
-            "minigames"
-        ],
-        "version": "2.2.6",
-        "minClientVersion": "1.9.6",
-        "authors": [
-            "Mocrosoft"
-        ],
-        "iconUrl": "https://chsami.github.io/Microbot-Hub/PestControlPlugin/assets/icon.png",
-        "cardUrl": "https://chsami.github.io/Microbot-Hub/PestControlPlugin/assets/card.png",
-        "disable": false,
-        "sha256": "bc1b1c8f545529573ab419249bca91c9d80084e8254aa0c13aac12f97dacb5c8",
-        "url": "https://nexus.microbot.cloud/repository/microbot-plugins/net/runelite/client/plugins/microbot/pestcontrolplugin/2.2.6/pestcontrolplugin-2.2.6.jar"
-    },
-    {
-        "internalName": "GEFiremakerPlugin",
-        "name": "GE Firemaker",
-        "description": "Uses logs on campfires around the Grand Exchange.",
-        "tags": [
-            "firemaking",
-            "campfire",
-            "grand",
-            "exchange",
-            "ge"
-        ],
-        "version": "1.0.0",
-        "minClientVersion": "1.9.6",
-        "authors": [
-            "StickToTheScript"
-        ],
-        "iconUrl": "",
-        "cardUrl": "https://chsami.github.io/Microbot-Hub/GEFiremakerPlugin/assets/card.png",
-        "disable": false,
-        "sha256": "30a4de802b12b7fc281f35a5f1784e08e51ed4d78d1a8c93e662fffeb694e3d8",
-        "url": "https://nexus.microbot.cloud/repository/microbot-plugins/net/runelite/client/plugins/microbot/gefiremakerplugin/1.0.0/gefiremakerplugin-1.0.0.jar"
-    },
-    {
-        "internalName": "TheMessPlugin",
-        "name": "The Mess",
-        "description": "A plugin to automate cooking in The Mess hall.",
-        "tags": [
-            "cooking",
-            "skilling",
-            "microbot"
-        ],
-        "version": "1.0.2",
-        "minClientVersion": "1.9.8",
-        "authors": [
-            "Bolado"
-        ],
-        "iconUrl": "https://chsami.github.io/Microbot-Hub/TheMessPlugin/assets/icon.png",
-        "cardUrl": "https://chsami.github.io/Microbot-Hub/TheMessPlugin/assets/card.png",
-        "disable": false,
-        "sha256": "fee287c0b36079abb50cf19f542337f9cf635fbc7a6f4aad275428b9ebbd894e",
-        "url": "https://nexus.microbot.cloud/repository/microbot-plugins/net/runelite/client/plugins/microbot/themessplugin/1.0.2/themessplugin-1.0.2.jar"
-    },
-    {
-        "internalName": "ShootingStarPlugin",
-        "name": "ShootingStar",
-        "description": "Finds & Travels to shooting stars",
-        "tags": [
-            "mining",
-            "skilling",
-            "star",
-            "shooting"
-        ],
-        "version": "1.4.2",
-        "minClientVersion": "1.9.8",
-        "authors": [
-            "g-mason0"
-        ],
-        "iconUrl": "https://chsami.github.io/Microbot-Hub/ShootingStarPlugin/assets/icon.png",
-        "cardUrl": "https://chsami.github.io/Microbot-Hub/ShootingStarPlugin/assets/card.png",
-        "disable": false,
-        "sha256": "d8b1692b71ab223115a10e691d1f0795e178271af2e989e94ef4de725fb404ad",
-        "url": "https://nexus.microbot.cloud/repository/microbot-plugins/net/runelite/client/plugins/microbot/shootingstarplugin/1.4.2/shootingstarplugin-1.4.2.jar"
-    },
-    {
-        "internalName": "GECookerPlugin",
-        "name": "GE Cooker",
-        "description": "Cooks items on fires found at the Grand Exchange.",
-        "tags": [
-            "cooking",
-            "grand",
-            "exchange",
-            "ge",
-            "fish",
-            "raw"
-        ],
-        "version": "1.0.0",
-        "minClientVersion": "1.9.6",
-        "authors": [
-            "StickToTheScript"
-        ],
-        "iconUrl": "",
-        "cardUrl": "https://chsami.github.io/Microbot-Hub/GECookerPlugin/assets/card.png",
-        "disable": false,
-        "sha256": "3ef860897ca93003d48e47c68f43e1a974594de59b6de282f0d00e58310327a1",
-        "url": "https://g-fire-oss.github.io/runelite/client/plugins/microbot/gecookerplugin-1.0.0.jar"
-    },
-    {
-        "internalName": "AutoFishingPlugin",
-        "name": "Fishing",
-        "description": "Automated fishing plugin with banking support",
-        "tags": [
-            "fishing",
-            "skilling"
-        ],
-        "version": "1.0.1",
-        "minClientVersion": "1.9.8",
-        "authors": [
-            "Unknown"
-        ],
-        "iconUrl": "https://chsami.github.io/Microbot-Hub/AutoFishingPlugin/assets/icon.png",
-        "cardUrl": "https://chsami.github.io/Microbot-Hub/AutoFishingPlugin/assets/card.png",
-        "disable": false,
-        "sha256": "677742ca0f742cfd3547dad824ecdeff2c6b1e94d10b6d720c839689cebc80be",
-        "url": "https://nexus.microbot.cloud/repository/microbot-plugins/net/runelite/client/plugins/microbot/autofishingplugin/1.0.1/autofishingplugin-1.0.1.jar"
-    },
-    {
-        "internalName": "AutoHerbiboarPlugin",
-        "name": "Herbiboar",
-        "description": "Automaticalli hunts herbiboars with trail tracking and banking support",
-        "tags": [
-            "skilling",
-            "hunter"
-        ],
-        "version": "1.1.1",
-        "minClientVersion": "1.9.8",
-        "authors": [
-            "Unknown"
-        ],
-        "iconUrl": "https://chsami.github.io/Microbot-Hub/AutoHerbiboarPlugin/assets/icon.png",
-        "cardUrl": "https://chsami.github.io/Microbot-Hub/AutoHerbiboarPlugin/assets/card.png",
-        "disable": false,
-        "sha256": "d0797987bb00dd88b336da3b3de3fb221fd4cb9a1d9747af9281b4493d0b7765",
-        "url": "https://nexus.microbot.cloud/repository/microbot-plugins/net/runelite/client/plugins/microbot/autoherbiboarplugin/1.1.1/autoherbiboarplugin-1.1.1.jar"
-    },
-    {
-        "internalName": "BarbarianVillageFisherPlugin",
-        "name": "Barb Village Fisher",
-        "description": "Fly and bait fish in Barbarian Village.",
-        "tags": [
-            "fish",
-            "fishing",
-            "fly",
-            "bait",
-            "barb",
-            "barbarian",
-            "village"
-        ],
-        "version": "1.0.0",
-        "minClientVersion": "1.9.6",
-        "authors": [
-            "StickToTheScript"
-        ],
-        "iconUrl": "",
-        "cardUrl": "https://chsami.github.io/Microbot-Hub/BarbarianVillageFisherPlugin/assets/card.png",
-        "disable": false,
-        "sha256": "01390030c3154db41f57288e83d44ff4a15c9dc40fc5cc8e084a7bc719b1976d",
-        "url": "https://nexus.microbot.cloud/repository/microbot-plugins/net/runelite/client/plugins/microbot/barbarianvillagefisherplugin/1.0.0/barbarianvillagefisherplugin-1.0.0.jar"
-    },
-    {
         "internalName": "AutoEssenceMiningPlugin",
         "name": "Essence Mining",
         "description": "Mines Rune/Pure Essence...",
@@ -183,171 +16,8 @@
         "iconUrl": "https://chsami.github.io/Microbot-Hub/AutoEssenceMiningPlugin/assets/icon.png",
         "cardUrl": "https://chsami.github.io/Microbot-Hub/AutoEssenceMiningPlugin/assets/card.png",
         "disable": false,
-        "sha256": "a5ce5e04447b6e062610e03cfd0453e92c369407d1b00ce989c475e5c206d22c",
+        "sha256": "a5b9270cf8986a6f881b5d3512fdd5988eafedc19e2e0320aa41141c87dae916",
         "url": "https://nexus.microbot.cloud/repository/microbot-plugins/net/runelite/client/plugins/microbot/autoessenceminingplugin/1.0.1/autoessenceminingplugin-1.0.1.jar"
-    },
-    {
-        "internalName": "OuraniaPlugin",
-        "name": "Ourania Altar",
-        "description": "Craft runes at the Ourania Altar",
-        "tags": [
-            "runecrafting",
-            "skilling",
-            "ourania",
-            "zmi"
-        ],
-        "version": "1.4.2",
-        "minClientVersion": "1.9.8",
-        "authors": [
-            "g-mason0"
-        ],
-        "iconUrl": "https://chsami.github.io/Microbot-Hub/OuraniaPlugin/assets/icon.png",
-        "cardUrl": "https://chsami.github.io/Microbot-Hub/OuraniaPlugin/assets/card.png",
-        "disable": false,
-        "sha256": "83cdfce66c0576908beabef8323a69173783155bef2f750ea923469e32faa0e9",
-        "url": "https://nexus.microbot.cloud/repository/microbot-plugins/net/runelite/client/plugins/microbot/ouraniaplugin/1.4.2/ouraniaplugin-1.4.2.jar"
-    },
-    {
-        "internalName": "AutoBankStanderPlugin",
-        "name": "Bank Stander",
-        "description": "AIO bank standing plugin for various processing activities",
-        "tags": [
-            "magic",
-            "skilling",
-            "processing"
-        ],
-        "version": "1.0.1",
-        "minClientVersion": "1.9.8",
-        "authors": [
-            "Unknown"
-        ],
-        "iconUrl": "https://chsami.github.io/Microbot-Hub/AutoBankStanderPlugin/assets/icon.png",
-        "cardUrl": "https://chsami.github.io/Microbot-Hub/AutoBankStanderPlugin/assets/card.png",
-        "disable": false,
-        "sha256": "d5bfbc628d997c7440db42c4a3073aadf2bf067310c80c825e14637c26112b35",
-        "url": "https://nexus.microbot.cloud/repository/microbot-plugins/net/runelite/client/plugins/microbot/autobankstanderplugin/1.0.1/autobankstanderplugin-1.0.1.jar"
-    },
-    {
-        "internalName": "ExamplePlugin",
-        "name": "Example",
-        "description": "Microbot Example Plugin",
-        "tags": [
-            "example"
-        ],
-        "version": "1.1.1",
-        "minClientVersion": "1.9.8",
-        "authors": [
-            "Mocrosoft"
-        ],
-        "iconUrl": "",
-        "cardUrl": "",
-        "disable": true,
-        "sha256": "12c9ed531621835709fa114153091298ce3ff2c5c3866acc35f2d190f331ef97",
-        "url": "https://nexus.microbot.cloud/repository/microbot-plugins/net/runelite/client/plugins/microbot/exampleplugin/1.1.1/exampleplugin-1.1.1.jar"
-    },
-    {
-        "internalName": "ThievingPlugin",
-        "name": "Thieving",
-        "description": "Microbot thieving plugin",
-        "tags": [
-            "thieving",
-            "skilling"
-        ],
-        "version": "2.0.3",
-        "minClientVersion": "1.9.8.2",
-        "authors": [
-            "Mocrosoft",
-            "Kryox",
-            "Jesusfh"
-        ],
-        "iconUrl": "https://chsami.github.io/Microbot-Hub/ThievingPlugin/assets/icon.png",
-        "cardUrl": "https://chsami.github.io/Microbot-Hub/ThievingPlugin/assets/card.png",
-        "disable": false,
-        "sha256": "1dc2a6e963d7365de81a53907a62ad310ec751c609d6cbc7dc9146998c128db5",
-        "url": "https://nexus.microbot.cloud/repository/microbot-plugins/net/runelite/client/plugins/microbot/thievingplugin/2.0.3/thievingplugin-2.0.3.jar"
-    },
-    {
-        "internalName": "AnonymousPlugin",
-        "name": "Anonymous Mode",
-        "description": "Hide your in-game identity.",
-        "tags": [
-            "chat",
-            "mask",
-            "hide",
-            "anonymous"
-        ],
-        "version": "1.0.3",
-        "minClientVersion": "1.9.6",
-        "authors": [
-            "Bolado"
-        ],
-        "iconUrl": "https://chsami.github.io/Microbot-Hub/AnonymousPlugin/assets/icon.png",
-        "cardUrl": "https://chsami.github.io/Microbot-Hub/AnonymousPlugin/assets/card.png",
-        "disable": false,
-        "sha256": "f5e9f419651f0f8d092dc41749aa66b41dbabd20cd205d90d541cadb02f328e6",
-        "url": "https://nexus.microbot.cloud/repository/microbot-plugins/net/runelite/client/plugins/microbot/anonymousplugin/1.0.3/anonymousplugin-1.0.3.jar"
-    },
-    {
-        "internalName": "ValeTotemPlugin",
-        "name": "Vale Totems",
-        "description": "Automated Vale Totems minigame bot with advanced optimizations",
-        "tags": [
-            "valetotems",
-            "fletching",
-            "minigame"
-        ],
-        "version": "1.0.1",
-        "minClientVersion": "1.9.7",
-        "authors": [
-            "Make"
-        ],
-        "iconUrl": "https://chsami.github.io/Microbot-Hub/ValeTotemPlugin/assets/card.png",
-        "cardUrl": "https://chsami.github.io/Microbot-Hub/ValeTotemPlugin/assets/card.png",
-        "disable": false,
-        "sha256": "a07afe9f7c60a2a0ab3ea140f90d48b97357ef075be7db5e8f26e97ba6c93e02",
-        "url": "https://nexus.microbot.cloud/repository/microbot-plugins/net/runelite/client/plugins/microbot/valetotemplugin/1.0.1/valetotemplugin-1.0.1.jar"
-    },
-    {
-        "internalName": "MKE_WintertodtPlugin",
-        "name": " AI-Wintertodt",
-        "description": "Advanced Wintertodt bot with human-like behavior",
-        "tags": [
-            "Wintertodt",
-            "firemaking",
-            "minigame"
-        ],
-        "version": "2.1.0",
-        "minClientVersion": "1.9.7",
-        "authors": [
-            "Make"
-        ],
-        "iconUrl": "https://chsami.github.io/Microbot-Hub/MKE_WintertodtPlugin/assets/card.png",
-        "cardUrl": "https://chsami.github.io/Microbot-Hub/MKE_WintertodtPlugin/assets/card.png",
-        "disable": false,
-        "sha256": "f561fc0b791a8cbe8e498356cd941b57b3b04e13840db05045696632e4077168",
-        "url": "https://nexus.microbot.cloud/repository/microbot-plugins/net/runelite/client/plugins/microbot/mke_wintertodtplugin/2.1.0/mke_wintertodtplugin-2.1.0.jar"
-    },
-    {
-        "internalName": "BlessedWinePlugin",
-        "name": "Blessed Wine",
-        "description": "Automating Prayer Training using blessed wines at Cam Torum",
-        "tags": [
-            "blessed",
-            "wine",
-            "ralos",
-            "prayer",
-            "libation"
-        ],
-        "version": "1.0.2",
-        "minClientVersion": "1.9.6",
-        "authors": [
-            "Hal"
-        ],
-        "iconUrl": "https://oldschool.runescape.wiki/images/Jug_of_wine.png",
-        "cardUrl": "",
-        "disable": false,
-        "sha256": "9c388c146b0ae49e689c71a2695fc2ea2182c16bb3bbe3a8c3545db219c41ae1",
-        "url": "https://nexus.microbot.cloud/repository/microbot-plugins/net/runelite/client/plugins/microbot/blessedwineplugin/1.0.2/blessedwineplugin-1.0.2.jar"
     },
     {
         "internalName": "MotherloadMinePlugin",
@@ -367,28 +37,252 @@
         "iconUrl": "https://chsami.github.io/Microbot-Hub/MotherloadMinePlugin/assets/icon.png",
         "cardUrl": "https://chsami.github.io/Microbot-Hub/MotherloadMinePlugin/assets/card.png",
         "disable": false,
-        "sha256": "b44fb89d99beb46063c5190bfe43de725341ce0ac46810480ed00b1d4a147780",
+        "sha256": "dd5adb630c2787b86650369db35a8799d89b8bc60d28d3412726b664b6f729c8",
         "url": "https://nexus.microbot.cloud/repository/microbot-plugins/net/runelite/client/plugins/microbot/motherloadmineplugin/1.8.1/motherloadmineplugin-1.8.1.jar"
     },
     {
-        "internalName": "BankSellerPlugin",
-        "name": "Bank Seller",
-        "description": "Withdraws tradeable bank items and sells them on the Grand Exchange",
+        "internalName": "ShootingStarPlugin",
+        "name": "ShootingStar",
+        "description": "Finds & Travels to shooting stars",
         "tags": [
-            "bank",
-            "ge",
-            "seller"
+            "mining",
+            "skilling",
+            "star",
+            "shooting"
+        ],
+        "version": "1.4.2",
+        "minClientVersion": "1.9.8",
+        "authors": [
+            "g-mason0"
+        ],
+        "iconUrl": "https://chsami.github.io/Microbot-Hub/ShootingStarPlugin/assets/icon.png",
+        "cardUrl": "https://chsami.github.io/Microbot-Hub/ShootingStarPlugin/assets/card.png",
+        "disable": false,
+        "sha256": "02075408dfc27aa7bbcf4186ee84cfa602bd59d431e941a216ac88727311345b",
+        "url": "https://nexus.microbot.cloud/repository/microbot-plugins/net/runelite/client/plugins/microbot/shootingstarplugin/1.4.2/shootingstarplugin-1.4.2.jar"
+    },
+    {
+        "internalName": "TitheFarmingPlugin",
+        "name": "Tithe Farm",
+        "description": "Plays the Tithe farm minigame for you!",
+        "tags": [
+            "tithe farming",
+            "microbot",
+            "skills",
+            "minigame"
+        ],
+        "version": "1.0.1",
+        "minClientVersion": "1.9.8.8",
+        "authors": [
+            "Mocrosoft"
+        ],
+        "iconUrl": "https://chsami.github.io/Microbot-Hub/TitheFarmingPlugin/assets/icon.png",
+        "cardUrl": "https://chsami.github.io/Microbot-Hub/TitheFarmingPlugin/assets/card.png",
+        "disable": false,
+        "sha256": "37191e9487f53a0ea7fee6fc548a87bdb435fc2ccf234e258d78e246ccd2f29d",
+        "url": "https://nexus.microbot.cloud/repository/microbot-plugins/net/runelite/client/plugins/microbot/tithefarmingplugin/1.0.1/tithefarmingplugin-1.0.1.jar"
+    },
+    {
+        "internalName": "AutoFishingPlugin",
+        "name": "Fishing",
+        "description": "Automated fishing plugin with banking support",
+        "tags": [
+            "fishing",
+            "skilling"
         ],
         "version": "1.0.1",
         "minClientVersion": "1.9.8",
         "authors": [
-            "KSP"
+            "Unknown"
         ],
-        "iconUrl": "https://chsami.github.io/Microbot-Hub/BankSellerPlugin/assets/icon.png",
-        "cardUrl": "",
+        "iconUrl": "https://chsami.github.io/Microbot-Hub/AutoFishingPlugin/assets/icon.png",
+        "cardUrl": "https://chsami.github.io/Microbot-Hub/AutoFishingPlugin/assets/card.png",
         "disable": false,
-        "sha256": "7076cdc1f906369070cb0bb2233db5b5ceb928b2b769cfa6045784cfc7ac5c26",
-        "url": "https://nexus.microbot.cloud/repository/microbot-plugins/net/runelite/client/plugins/microbot/banksellerplugin/1.0.1/banksellerplugin-1.0.1.jar"
+        "sha256": "b232d0f6eb3d166e37f70a7e63bb96c642780956fa5bf88a39cd7e5c41f59452",
+        "url": "https://nexus.microbot.cloud/repository/microbot-plugins/net/runelite/client/plugins/microbot/autofishingplugin/1.0.1/autofishingplugin-1.0.1.jar"
+    },
+    {
+        "internalName": "AnonymousPlugin",
+        "name": "Anonymous Mode",
+        "description": "Hide your in-game identity.",
+        "tags": [
+            "chat",
+            "mask",
+            "hide",
+            "anonymous"
+        ],
+        "version": "1.0.3",
+        "minClientVersion": "1.9.6",
+        "authors": [
+            "Bolado"
+        ],
+        "iconUrl": "https://chsami.github.io/Microbot-Hub/AnonymousPlugin/assets/icon.png",
+        "cardUrl": "https://chsami.github.io/Microbot-Hub/AnonymousPlugin/assets/card.png",
+        "disable": false,
+        "sha256": "7368471d9df06ffba9ed2f1205fa581acdf5368407f6f7ca76d82e2e8c19c78b",
+        "url": "https://nexus.microbot.cloud/repository/microbot-plugins/net/runelite/client/plugins/microbot/anonymousplugin/1.0.3/anonymousplugin-1.0.3.jar"
+    },
+    {
+        "internalName": "JewelleryEnchantPlugin",
+        "name": "Jewellery Enchant",
+        "description": "Enchants all types of jewellery, with smart staff & rune handling.",
+        "tags": [
+            "magic",
+            "enchant",
+            "jewellery",
+            "skilling",
+            "microbot"
+        ],
+        "version": "1.0.1",
+        "minClientVersion": "1.9.8",
+        "authors": [
+            "Lumusi"
+        ],
+        "iconUrl": "https://chsami.github.io/Microbot-Hub/JewelleryEnchantPlugin/assets/icon.png",
+        "cardUrl": "https://chsami.github.io/Microbot-Hub/JewelleryEnchantPlugin/assets/card.png",
+        "disable": false,
+        "sha256": "13d2719a8a38edcf8b29681c3f9fdc7b9c73a622c3136f8cb26fe6d7f6268abe",
+        "url": "https://nexus.microbot.cloud/repository/microbot-plugins/net/runelite/client/plugins/microbot/jewelleryenchantplugin/1.0.1/jewelleryenchantplugin-1.0.1.jar"
+    },
+    {
+        "internalName": "ThievingPlugin",
+        "name": "Thieving",
+        "description": "Microbot thieving plugin",
+        "tags": [
+            "thieving",
+            "skilling"
+        ],
+        "version": "2.0.3",
+        "minClientVersion": "1.9.8.2",
+        "authors": [
+            "Mocrosoft",
+            "Kryox",
+            "Jesusfh"
+        ],
+        "iconUrl": "https://chsami.github.io/Microbot-Hub/ThievingPlugin/assets/icon.png",
+        "cardUrl": "https://chsami.github.io/Microbot-Hub/ThievingPlugin/assets/card.png",
+        "disable": false,
+        "sha256": "84de70a8f37493a88bf441fe7022988875cdee19d6f69fe15ebb30cc16606cd0",
+        "url": "https://nexus.microbot.cloud/repository/microbot-plugins/net/runelite/client/plugins/microbot/thievingplugin/2.0.3/thievingplugin-2.0.3.jar"
+    },
+    {
+        "internalName": "JadPlugin",
+        "name": "Jad Helper",
+        "description": "Auto prays jad attacks and attacks healers",
+        "tags": [
+            "jad",
+            "microbot"
+        ],
+        "version": "1.0.6",
+        "minClientVersion": "1.9.8.8",
+        "authors": [
+            "Mocrosoft"
+        ],
+        "iconUrl": "https://chsami.github.io/Microbot-Hub/JadPlugin/assets/icon.png",
+        "cardUrl": "https://chsami.github.io/Microbot-Hub/JadPlugin/assets/card.png",
+        "disable": false,
+        "sha256": "a968e66b478f8f353f8875c63e43be5dbb45612cbb543418ccd2bb48ff3d1159",
+        "url": "https://nexus.microbot.cloud/repository/microbot-plugins/net/runelite/client/plugins/microbot/jadplugin/1.0.6/jadplugin-1.0.6.jar"
+    },
+    {
+        "internalName": "AutoChompyKillerPlugin",
+        "name": "Chompy Killer",
+        "description": "Automated chompy bird hunting plugin...",
+        "tags": [
+            "chompy",
+            "combat"
+        ],
+        "version": "1.0.1",
+        "minClientVersion": "1.9.8",
+        "authors": [
+            "Unknown"
+        ],
+        "iconUrl": "https://chsami.github.io/Microbot-Hub/AutoChompyKillerPlugin/assets/icon.png",
+        "cardUrl": "https://chsami.github.io/Microbot-Hub/AutoChompyKillerPlugin/assets/card.png",
+        "disable": false,
+        "sha256": "be729107c41dfb0f9040532a8bb938e19db44de449b084991997cf0a92be2459",
+        "url": "https://nexus.microbot.cloud/repository/microbot-plugins/net/runelite/client/plugins/microbot/autochompykillerplugin/1.0.1/autochompykillerplugin-1.0.1.jar"
+    },
+    {
+        "internalName": "AutoBankStanderPlugin",
+        "name": "Bank Stander",
+        "description": "AIO bank standing plugin for various processing activities",
+        "tags": [
+            "magic",
+            "skilling",
+            "processing"
+        ],
+        "version": "1.0.2",
+        "minClientVersion": "1.9.8",
+        "authors": [
+            "Unknown"
+        ],
+        "iconUrl": "https://chsami.github.io/Microbot-Hub/AutoBankStanderPlugin/assets/icon.png",
+        "cardUrl": "https://chsami.github.io/Microbot-Hub/AutoBankStanderPlugin/assets/card.png",
+        "disable": false,
+        "sha256": "bcc212ec17b06be147d9d9e101f644d39c3656dd7850da60c5c9107bd97f4655",
+        "url": "https://nexus.microbot.cloud/repository/microbot-plugins/net/runelite/client/plugins/microbot/autobankstanderplugin/1.0.2/autobankstanderplugin-1.0.2.jar"
+    },
+    {
+        "internalName": "VarrockAnvilPlugin",
+        "name": "Varrock Anvil",
+        "description": "Smith items at the anvils in Varrock West.",
+        "tags": [
+            "smithing",
+            "varrock",
+            "anvil"
+        ],
+        "version": "1.0.3",
+        "minClientVersion": "1.9.6",
+        "authors": [
+            "StickToTheScript"
+        ],
+        "iconUrl": "https://chsami.github.io/Microbot-Hub/VarrockAnvilPlugin/assets/icon.png",
+        "cardUrl": "https://chsami.github.io/Microbot-Hub/VarrockAnvilPlugin/assets/card.png",
+        "disable": false,
+        "sha256": "504ad11cc3c49c308620fec6691dc799df2c62aa8c214cff8f85d3fa391fead2",
+        "url": "https://nexus.microbot.cloud/repository/microbot-plugins/net/runelite/client/plugins/microbot/varrockanvilplugin/1.0.3/varrockanvilplugin-1.0.3.jar"
+    },
+    {
+        "internalName": "BonesToBananasPlugin",
+        "name": "Bones to Bananas",
+        "description": "Casts Bones to Bananas, using staves to save runes.",
+        "tags": [
+            "magic",
+            "skilling",
+            "bones",
+            "bananas",
+            "microbot"
+        ],
+        "version": "1.0.1",
+        "minClientVersion": "1.9.8",
+        "authors": [
+            "Lumusi"
+        ],
+        "iconUrl": "https://chsami.github.io/Microbot-Hub/BonesToBananasPlugin/assets/icon.png",
+        "cardUrl": "https://chsami.github.io/Microbot-Hub/BonesToBananasPlugin/assets/card.png",
+        "disable": false,
+        "sha256": "8297c9c3e38a55eae80ad89c8a894f51a76b0401a81ae897a80ed914780ae504",
+        "url": "https://nexus.microbot.cloud/repository/microbot-plugins/net/runelite/client/plugins/microbot/bonestobananasplugin/1.0.1/bonestobananasplugin-1.0.1.jar"
+    },
+    {
+        "internalName": "PestControlPlugin",
+        "name": "Pest Control",
+        "description": "Supports all boats, portals, and shields.",
+        "tags": [
+            "pest control",
+            "minigames"
+        ],
+        "version": "2.2.6",
+        "minClientVersion": "1.9.6",
+        "authors": [
+            "Mocrosoft"
+        ],
+        "iconUrl": "https://chsami.github.io/Microbot-Hub/PestControlPlugin/assets/icon.png",
+        "cardUrl": "https://chsami.github.io/Microbot-Hub/PestControlPlugin/assets/card.png",
+        "disable": false,
+        "sha256": "15c83f474f7f8c1b2996665c79fcd97b784b67eed5a53672cee1ef365fcd5541",
+        "url": "https://nexus.microbot.cloud/repository/microbot-plugins/net/runelite/client/plugins/microbot/pestcontrolplugin/2.2.6/pestcontrolplugin-2.2.6.jar"
     },
     {
         "internalName": "WildernessAgilityPlugin",
@@ -409,67 +303,301 @@
         "iconUrl": "https://chsami.github.io/Microbot-Hub/WildernessAgilityPlugin/assets/Icon.png",
         "cardUrl": "httpa://chsami.github.io/Microbot-Hub/WildernessAgilityPlugin/assets/Card.png",
         "disable": false,
-        "sha256": "9541960be9224e1e8ed984bae5097335a71fabea5621c7186553320ebbf4fa26",
+        "sha256": "2b9bac5953b5d29ff52150e42bde9034947df0b5dd861f508510312f68d847bb",
         "url": "https://nexus.microbot.cloud/repository/microbot-plugins/net/runelite/client/plugins/microbot/wildernessagilityplugin/1.5.1/wildernessagilityplugin-1.5.1.jar"
     },
     {
-        "internalName": "VarrockAnvilPlugin",
-        "name": "Varrock Anvil",
-        "description": "Smith items at the anvils in Varrock West.",
+        "internalName": "AutoHerbiboarPlugin",
+        "name": "Herbiboar",
+        "description": "Automaticalli hunts herbiboars with trail tracking and banking support",
         "tags": [
-            "smithing",
-            "varrock",
-            "anvil"
+            "skilling",
+            "hunter"
         ],
-        "version": "1.0.2",
-        "minClientVersion": "1.9.6",
-        "authors": [
-            "StickToTheScript"
-        ],
-        "iconUrl": "",
-        "cardUrl": "https://chsami.github.io/Microbot-Hub/VarrockAnvilPlugin/assets/card.png",
-        "disable": false,
-        "sha256": "2aed50e6a81c2ef4dedfce7c39c02ce90089eca3a85da046edbb026cc16cffa2",
-        "url": "https://nexus.microbot.cloud/repository/microbot-plugins/net/runelite/client/plugins/microbot/varrockanvilplugin/1.0.2/varrockanvilplugin-1.0.2.jar"
-    },
-    {
-        "internalName": "AutoChompyKillerPlugin",
-        "name": "Chompy Killer",
-        "description": "Automated chompy bird hunting plugin...",
-        "tags": [
-            "chompy",
-            "combat"
-        ],
-        "version": "1.0.1",
+        "version": "1.1.1",
         "minClientVersion": "1.9.8",
         "authors": [
             "Unknown"
         ],
-        "iconUrl": "https://chsami.github.io/Microbot-Hub/AutoChompyKillerPlugin/assets/icon.png",
-        "cardUrl": "https://chsami.github.io/Microbot-Hub/AutoChompyKillerPlugin/assets/card.png",
+        "iconUrl": "https://chsami.github.io/Microbot-Hub/AutoHerbiboarPlugin/assets/icon.png",
+        "cardUrl": "https://chsami.github.io/Microbot-Hub/AutoHerbiboarPlugin/assets/card.png",
         "disable": false,
-        "sha256": "2e913a03c75a6121a46a6aaf7b4c4e663397422e9e1551b93143b432dd701dff",
-        "url": "https://nexus.microbot.cloud/repository/microbot-plugins/net/runelite/client/plugins/microbot/autochompykillerplugin/1.0.1/autochompykillerplugin-1.0.1.jar"
+        "sha256": "ce0cc5899eba35fa579b439dfaa54d40ea11777e0f4390dd15f3bd423dad9f32",
+        "url": "https://nexus.microbot.cloud/repository/microbot-plugins/net/runelite/client/plugins/microbot/autoherbiboarplugin/1.1.1/autoherbiboarplugin-1.1.1.jar"
     },
     {
-      "internalName": "CraftHelperPlugin",
-      "name": "Craft Helper",
-      "description": "Will attempt to help with Crafting Pottery and Leather",
-      "tags": [
-        "crafting",
-        "leather",
-        "clay",
-        "pottery"
-      ],
-      "version": "0.1.2",
-      "minClientVersion": "1.9.8",
-      "authors": [
-        "Fire"
-      ],
-      "iconUrl": "",
-      "cardUrl": "",
-      "disable": false,
-      "sha256": "f1299f90389f52af4385b765901b4e94d26396d3a0574c8a723b334cc11a44a6",
-      "url": "https://g-fire-oss.github.io/runelite/client/plugins/microbot/crafthelperplugin-0.1.2.jar"
+        "internalName": "TowerOfLifeCCPlugin",
+        "name": " Creature Creation",
+        "description": "Automates the creature creation process within the Tower of Life basement.",
+        "tags": [
+            "Tower of life",
+            "creature",
+            "creature creation",
+            "creation",
+            "tol",
+            "cc",
+            "cd",
+            "cardew"
+        ],
+        "version": "1.1.4",
+        "minClientVersion": "1.9.8",
+        "authors": [
+            "Cardew"
+        ],
+        "iconUrl": "https://chsami.github.io/Microbot-Hub/TowerOfLifeCCPlugin/assets/icon.png",
+        "cardUrl": "https://chsami.github.io/Microbot-Hub/TowerOfLifeCCPlugin/assets/card.png",
+        "disable": false,
+        "sha256": "08d0b90ebdd4d1e7cc660b3377fbc868917988506558c646cedd724b0544b41f",
+        "url": "https://nexus.microbot.cloud/repository/microbot-plugins/net/runelite/client/plugins/microbot/toweroflifeccplugin/1.1.4/toweroflifeccplugin-1.1.4.jar"
+    },
+    {
+        "internalName": "BankSellerPlugin",
+        "name": "Bank Seller",
+        "description": "Withdraws tradeable bank items and sells them on the Grand Exchange",
+        "tags": [
+            "bank",
+            "ge",
+            "seller"
+        ],
+        "version": "1.0.2",
+        "minClientVersion": "1.9.8",
+        "authors": [
+            "KSP"
+        ],
+        "iconUrl": "https://chsami.github.io/Microbot-Hub/BankSellerPlugin/assets/bank.png",
+        "cardUrl": "https://chsami.github.io/Microbot-Hub/BankSellerPlugin/assets/card.png",
+        "disable": false,
+        "sha256": "b291e08bae2a0e8248725523c25884e8b0ded0921e69f4cf6eae359e06aaa4eb",
+        "url": "https://nexus.microbot.cloud/repository/microbot-plugins/net/runelite/client/plugins/microbot/banksellerplugin/1.0.2/banksellerplugin-1.0.2.jar"
+    },
+    {
+        "internalName": "TheMessPlugin",
+        "name": "The Mess",
+        "description": "A plugin to automate cooking in The Mess hall.",
+        "tags": [
+            "cooking",
+            "skilling",
+            "microbot"
+        ],
+        "version": "1.0.2",
+        "minClientVersion": "1.9.8",
+        "authors": [
+            "Bolado"
+        ],
+        "iconUrl": "https://chsami.github.io/Microbot-Hub/TheMessPlugin/assets/icon.png",
+        "cardUrl": "https://chsami.github.io/Microbot-Hub/TheMessPlugin/assets/card.png",
+        "disable": false,
+        "sha256": "71d46d529ad255655ea5c183c3edd2a5973ffb2890bb65dea68ba1712eaff928",
+        "url": "https://nexus.microbot.cloud/repository/microbot-plugins/net/runelite/client/plugins/microbot/themessplugin/1.0.2/themessplugin-1.0.2.jar"
+    },
+    {
+        "internalName": "NmzPlugin",
+        "name": "Nmz",
+        "description": "Plays the nightmare zone minigame",
+        "tags": [
+            "nmz",
+            "microbot"
+        ],
+        "version": "2.2.0",
+        "minClientVersion": "1.9.8",
+        "authors": [
+            "Mocrosoft"
+        ],
+        "iconUrl": "https://chsami.github.io/Microbot-Hub/NmzPlugin/assets/icon.png",
+        "cardUrl": "https://chsami.github.io/Microbot-Hub/NmzPlugin/assets/card.png",
+        "disable": false,
+        "sha256": "464c805436248a0f41058a5f288d0f8ba6587eadd1ea38fdedb2e07265015eae",
+        "url": "https://nexus.microbot.cloud/repository/microbot-plugins/net/runelite/client/plugins/microbot/nmzplugin/2.2.0/nmzplugin-2.2.0.jar"
+    },
+    {
+        "internalName": "MageTrainingArenaPlugin",
+        "name": "Mage Training Arena",
+        "description": "Basche's Mage Training Arena plugin",
+        "tags": [
+            "basche",
+            "mta",
+            "moneymaking",
+            "magic"
+        ],
+        "version": "1.1.4",
+        "minClientVersion": "1.9.8.8",
+        "authors": [
+            "Basche"
+        ],
+        "iconUrl": "https://chsami.github.io/Microbot-Hub/MageTrainingArenaPlugin/assets/icon.png",
+        "cardUrl": "https://chsami.github.io/Microbot-Hub/MageTrainingArenaPlugin/assets/card.png",
+        "disable": false,
+        "sha256": "e701f57ef5afc83674d7f9b9fb091c9ef9634f404f2e616885f6c5a225fff3c7",
+        "url": "https://nexus.microbot.cloud/repository/microbot-plugins/net/runelite/client/plugins/microbot/magetrainingarenaplugin/1.1.4/magetrainingarenaplugin-1.1.4.jar"
+    },
+    {
+        "internalName": "GEFiremakerPlugin",
+        "name": "GE Firemaker",
+        "description": "Uses logs on campfires around the Grand Exchange.",
+        "tags": [
+            "firemaking",
+            "campfire",
+            "grand",
+            "exchange",
+            "ge"
+        ],
+        "version": "1.0.1",
+        "minClientVersion": "1.9.6",
+        "authors": [
+            "StickToTheScript"
+        ],
+        "iconUrl": "https://chsami.github.io/Microbot-Hub/GEFiremakerPlugin/assets/firemaking.png",
+        "cardUrl": "https://chsami.github.io/Microbot-Hub/GEFiremakerPlugin/assets/card.png",
+        "disable": false,
+        "sha256": "fc89805271a4489834260abf274ebde133d9ee8e332c581794c4d79b6b399436",
+        "url": "https://nexus.microbot.cloud/repository/microbot-plugins/net/runelite/client/plugins/microbot/gefiremakerplugin/1.0.1/gefiremakerplugin-1.0.1.jar"
+    },
+    {
+        "internalName": "ExamplePlugin",
+        "name": "Example",
+        "description": "Microbot Example Plugin",
+        "tags": [
+            "example"
+        ],
+        "version": "1.1.1",
+        "minClientVersion": "1.9.8",
+        "authors": [
+            "Mocrosoft"
+        ],
+        "iconUrl": "",
+        "cardUrl": "",
+        "disable": true,
+        "sha256": "c22f8d0e3e182845957c1fd2b8a803692a4fa041dd5ebdeeab978906ce248eff",
+        "url": "https://nexus.microbot.cloud/repository/microbot-plugins/net/runelite/client/plugins/microbot/exampleplugin/1.1.1/exampleplugin-1.1.1.jar"
+    },
+    {
+        "internalName": "MKE_WintertodtPlugin",
+        "name": " AI-Wintertodt",
+        "description": "Advanced Wintertodt bot with human-like behavior",
+        "tags": [
+            "Wintertodt",
+            "firemaking",
+            "minigame"
+        ],
+        "version": "2.1.0",
+        "minClientVersion": "1.9.7",
+        "authors": [
+            "Make"
+        ],
+        "iconUrl": "https://chsami.github.io/Microbot-Hub/MKE_WintertodtPlugin/assets/card.png",
+        "cardUrl": "https://chsami.github.io/Microbot-Hub/MKE_WintertodtPlugin/assets/card.png",
+        "disable": false,
+        "sha256": "486146ae5c28bbb2e20a743bae244326a34581722a03f8193de34b4d9df42d8c",
+        "url": "https://nexus.microbot.cloud/repository/microbot-plugins/net/runelite/client/plugins/microbot/mke_wintertodtplugin/2.1.0/mke_wintertodtplugin-2.1.0.jar"
+    },
+    {
+        "internalName": "GECookerPlugin",
+        "name": "GE Cooker",
+        "description": "Cooks items on fires found at the Grand Exchange.",
+        "tags": [
+            "cooking",
+            "grand",
+            "exchange",
+            "ge",
+            "fish",
+            "raw"
+        ],
+        "version": "1.0.1",
+        "minClientVersion": "1.9.6",
+        "authors": [
+            "StickToTheScript"
+        ],
+        "iconUrl": "https://chsami.github.io/Microbot-Hub/GECookerPlugin/assets/cooking.png",
+        "cardUrl": "https://chsami.github.io/Microbot-Hub/GECookerPlugin/assets/card.png",
+        "disable": false,
+        "sha256": "b9bdd91e693a683a5f8a6b01dca17707a1e3b14151d808286a3d71800a98cfe0",
+        "url": "https://nexus.microbot.cloud/repository/microbot-plugins/net/runelite/client/plugins/microbot/gecookerplugin/1.0.1/gecookerplugin-1.0.1.jar"
+    },
+    {
+        "internalName": "ValeTotemPlugin",
+        "name": "Vale Totems",
+        "description": "Automated Vale Totems minigame bot with advanced optimizations",
+        "tags": [
+            "valetotems",
+            "fletching",
+            "minigame"
+        ],
+        "version": "1.0.3",
+        "minClientVersion": "1.9.7",
+        "authors": [
+            "Make"
+        ],
+        "iconUrl": "https://chsami.github.io/Microbot-Hub/ValeTotemPlugin/assets/card.png",
+        "cardUrl": "https://chsami.github.io/Microbot-Hub/ValeTotemPlugin/assets/card.png",
+        "disable": false,
+        "sha256": "90dea6fc41879428e23df25862f5cdf7a1e2fc141fc8d84bb87dc1ae6b140012",
+        "url": "https://nexus.microbot.cloud/repository/microbot-plugins/net/runelite/client/plugins/microbot/valetotemplugin/1.0.3/valetotemplugin-1.0.3.jar"
+    },
+    {
+        "internalName": "BlessedWinePlugin",
+        "name": "Blessed Wine",
+        "description": "Automating Prayer Training using blessed wines at Cam Torum",
+        "tags": [
+            "blessed",
+            "wine",
+            "ralos",
+            "prayer",
+            "libation"
+        ],
+        "version": "1.0.2",
+        "minClientVersion": "1.9.6",
+        "authors": [
+            "Hal"
+        ],
+        "iconUrl": "https://oldschool.runescape.wiki/images/Jug_of_wine.png",
+        "cardUrl": "",
+        "disable": false,
+        "sha256": "5d35ab39528b4c6c3eda723358135eacb4c10e58233b9658c72150529e616761",
+        "url": "https://nexus.microbot.cloud/repository/microbot-plugins/net/runelite/client/plugins/microbot/blessedwineplugin/1.0.2/blessedwineplugin-1.0.2.jar"
+    },
+    {
+        "internalName": "OuraniaPlugin",
+        "name": "Ourania Altar",
+        "description": "Craft runes at the Ourania Altar",
+        "tags": [
+            "runecrafting",
+            "skilling",
+            "ourania",
+            "zmi"
+        ],
+        "version": "1.4.2",
+        "minClientVersion": "1.9.8",
+        "authors": [
+            "g-mason0"
+        ],
+        "iconUrl": "https://chsami.github.io/Microbot-Hub/OuraniaPlugin/assets/icon.png",
+        "cardUrl": "https://chsami.github.io/Microbot-Hub/OuraniaPlugin/assets/card.png",
+        "disable": false,
+        "sha256": "b5b0ee609a1a285f0d0bac9a194729a7c92ffa6990694b9638b45552b80e26b1",
+        "url": "https://nexus.microbot.cloud/repository/microbot-plugins/net/runelite/client/plugins/microbot/ouraniaplugin/1.4.2/ouraniaplugin-1.4.2.jar"
+    },
+    {
+        "internalName": "BarbarianVillageFisherPlugin",
+        "name": "Barb Village Fisher",
+        "description": "Fly and bait fish in Barbarian Village.",
+        "tags": [
+            "fish",
+            "fishing",
+            "fly",
+            "bait",
+            "barb",
+            "barbarian",
+            "village"
+        ],
+        "version": "1.0.1",
+        "minClientVersion": "1.9.6",
+        "authors": [
+            "StickToTheScript"
+        ],
+        "iconUrl": "https://chsami.github.io/Microbot-Hub/BarbarianVillageFisherPlugin/assets/icon.png",
+        "cardUrl": "https://chsami.github.io/Microbot-Hub/BarbarianVillageFisherPlugin/assets/card.png",
+        "disable": false,
+        "sha256": "c2e23a7ff43753af4de7907320cfa09d0ae588b93a464d1e38ddee26dd600881",
+        "url": "https://nexus.microbot.cloud/repository/microbot-plugins/net/runelite/client/plugins/microbot/barbarianvillagefisherplugin/1.0.1/barbarianvillagefisherplugin-1.0.1.jar"
     }
 ]
