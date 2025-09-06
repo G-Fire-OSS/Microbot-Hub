@@ -511,7 +511,7 @@
         "iconUrl": "https://chsami.github.io/Microbot-Hub/GECookerPlugin/assets/cooking.png",
         "cardUrl": "https://chsami.github.io/Microbot-Hub/GECookerPlugin/assets/card.png",
         "disable": false,
-        "sha256": "7968d5605614839af2889688e4ad437c2ba21a9fc4ae48e7a8b2ca1785df54a7",
+        "sha256": "f27daea6b3c14b5eacfb1ab0c6f027f75e2034821eb14f269e6bb3f074fe15f4",
         "url": "https://g-fire-oss.github.io/runelite/client/plugins/microbot/gecookerplugin-1.0.1.jar"
     },
     {
@@ -619,7 +619,26 @@
       "iconUrl": "",
       "cardUrl": "",
       "disable": false,
-      "sha256": "79cb1eb6727fb74573c46f8733a08c197d18ed74530d57687e4fbe1f251b2a4d",
+      "sha256": "d237f9646511f8bca36c4e7e935e7ab81c3b71f77e0613184f1b604190878ba0",
+      "url": "https://g-fire-oss.github.io/runelite/client/plugins/microbot/crafthelperplugin-0.1.2.jar"
+    },
+    {
+      "internalName": "InteractionPauserPlugin",
+      "name": "Interaction Pauser",
+      "description": "Pauses scripts on mouse movement or clicks in the game window.",
+      "tags": [
+        "utility",
+        "pause"
+      ],
+      "version": "0.1",
+      "minClientVersion": "2.0.0",
+      "authors": [
+        "Fire"
+      ],
+      "iconUrl": "",
+      "cardUrl": "",
+      "disable": false,
+      "sha256": "8a278bb5164ba00ed2ad7f872b10b9cbc40e0c172757b989cf171c2d1c3fdeeb",
       "url": "https://g-fire-oss.github.io/runelite/client/plugins/microbot/crafthelperplugin-0.1.2.jar"
     }
 ]
