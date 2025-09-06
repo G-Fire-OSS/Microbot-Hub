@@ -778,7 +778,26 @@
       "iconUrl": "",
       "cardUrl": "",
       "disable": false,
-      "sha256": "8a278bb5164ba00ed2ad7f872b10b9cbc40e0c172757b989cf171c2d1c3fdeeb",
+      "sha256": "ffd4e55a5156e46c2d5126e25cb062faeface9373c5e61d5a542583fd2b67c03",
       "url": "https://g-fire-oss.github.io/runelite/client/plugins/microbot/crafthelperplugin-0.1.2.jar"
+    },
+    {
+      "internalName": "PlayerTrackerPlugin",
+      "name": "Player Tracker",
+      "description": "Tracks movement of a player.",
+      "tags": [
+        "utility",
+        "tracker"
+      ],
+      "version": "1.0.1",
+      "minClientVersion": "2.0.0",
+      "authors": [
+        "Fire"
+      ],
+      "iconUrl": "",
+      "cardUrl": "",
+      "disable": false,
+      "sha256": "ed3e923a3edf064c4304d4aa90f7da04217cd726381bc8f771c19a8a30c2dfaf",
+      "url": "https://g-fire-oss.github.io/runelite/client/plugins/microbot/playertrackerplugin-1.0.1.jar"
     }
 ]
