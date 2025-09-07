@@ -6,7 +6,7 @@ import net.runelite.client.config.ConfigItem;
 
 import java.awt.Color;
 
-@ConfigGroup("playertracker")
+@ConfigGroup("micro-playertracker")
 public interface PlayerTrackerConfig extends Config {
 
     @ConfigItem(

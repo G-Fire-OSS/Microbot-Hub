@@ -1,10 +1,12 @@
 package net.runelite.client.plugins.microbot.playertracker;
 
+import com.google.inject.Provides;
 import lombok.Getter;
 import net.runelite.api.Client;
 import net.runelite.api.Player;
 import net.runelite.api.coords.WorldPoint;
 import net.runelite.api.events.GameTick;
+import net.runelite.client.config.ConfigManager;
 import net.runelite.client.eventbus.Subscribe;
 import net.runelite.client.plugins.Plugin;
 import net.runelite.client.plugins.PluginDescriptor;
@@ -30,10 +32,17 @@ public class PlayerTrackerPlugin extends Plugin {
 
     private static final int CLEANUP_INTERVAL_MS = 1000;
 
-    private final Client client;
-    private final PlayerTrackerConfig config;
-    private final OverlayManager overlayManager;
-    private final PlayerTrackerOverlay overlay;
+    @Inject
+    private Client client;
+
+    @Inject
+    private PlayerTrackerConfig config;
+
+    @Inject
+    private OverlayManager overlayManager;
+
+    @Inject
+    private PlayerTrackerOverlay overlay;
 
     @Getter
     private final Map<WorldPoint, Long> trackedTiles = new ConcurrentHashMap<>();
@@ -41,12 +50,9 @@ public class PlayerTrackerPlugin extends Plugin {
     private WorldPoint lastPlayerLocation;
     private long lastCleanupTime = 0;
 
-    @Inject
-    private PlayerTrackerPlugin(Client client, PlayerTrackerConfig config, OverlayManager overlayManager, PlayerTrackerOverlay overlay) {
-        this.client = client;
-        this.config = config;
-        this.overlayManager = overlayManager;
-        this.overlay = overlay;
+    @Provides
+    PlayerTrackerConfig provideConfig(ConfigManager configManager) {
+        return configManager.getConfig(PlayerTrackerConfig.class);
     }
 
     @Override
