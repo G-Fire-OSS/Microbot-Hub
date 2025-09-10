@@ -8,11 +8,12 @@ import net.runelite.client.config.ConfigItem;
 import net.runelite.client.config.ConfigSection;
 import net.runelite.client.config.Range;
 
-@ConfigGroup("crafthelper")
+@ConfigGroup("micro-crafthelper")
 @ConfigInformation("Free to Play Crafting Helper<br/>" +
         "Tested at Barbarian Village and Al Kharid<br/>" +
         "1. For Soft Clay: Have 14+ empty buckets and clay in your bank.<br/>" +
-        "2. For Leather: Have a needle, thread, and leather in your bank.")
+        "2. For Tanning: Have cowhides and coins in your bank. Start near a bank.<br/>" +
+        "3. For Crafting Leather: Have a needle, thread, and leather in your bank.")
 public interface CraftHelperConfig extends Config {
 
     // --- Sections ---
@@ -31,11 +32,11 @@ public interface CraftHelperConfig extends Config {
     String craftingSection = "crafting";
 
     @ConfigSection(
-            name = "Clay Options",
-            description = "Options for Clay Crafting",
+            name = "Pottery Options",
+            description = "Options for Pottery Crafting",
             position = 2
     )
-    String claySection = "clay";
+    String potterySection = "pottery";
 
     @ConfigSection(
             name = "Leather Options",
@@ -72,11 +73,6 @@ public interface CraftHelperConfig extends Config {
     }
 
     // --- Crafting Mode ---
-    enum CraftingMode {
-        CLAY,
-        LEATHER
-    }
-
     @ConfigItem(
             keyName = "craftingMode",
             name = "Crafting Mode",
@@ -84,26 +80,26 @@ public interface CraftHelperConfig extends Config {
             position = 1,
             section = craftingSection
     )
-    default CraftingMode craftingMode() {
-        return CraftingMode.CLAY;
+    default CraftHelperPlugin.CraftHelperMode craftingMode() {
+        return CraftHelperPlugin.CraftHelperMode.POTTERY;
     }
 
 
-    // --- Clay Settings ---
-    enum ClayMode {
+    // --- Pottery Settings ---
+    enum PotterySubMode {
         MAKE_SOFT_CLAY,
         MAKE_POTTERY
     }
 
     @ConfigItem(
-            keyName = "clayMode",
-            name = "Clay Mode",
+            keyName = "potterySubMode",
+            name = "Pottery Mode",
             description = "Select what to do with clay. For Soft Clay Start with 14+ buckets in inv or bank.",
             position = 2,
-            section = claySection
+            section = potterySection
     )
-    default ClayMode clayMode() {
-        return ClayMode.MAKE_SOFT_CLAY;
+    default PotterySubMode potterySubMode() {
+        return PotterySubMode.MAKE_SOFT_CLAY;
     }
 
     @Getter
@@ -130,9 +126,9 @@ public interface CraftHelperConfig extends Config {
     @ConfigItem(
             keyName = "potteryItem",
             name = "Pottery Item",
-            description = "Item to make on the pottery wheel. Only works if Clay Mode is MAKE_POTTERY.",
+            description = "Item to make on the pottery wheel. Only works if Pottery Mode is MAKE_POTTERY.",
             position = 3,
-            section = claySection
+            section = potterySection
     )
     default PotteryItem potteryItem() {
         return PotteryItem.POT;
@@ -140,6 +136,38 @@ public interface CraftHelperConfig extends Config {
 
 
     // --- Leather Settings ---
+    enum LeatherMode {
+        TAN_HIDES,
+        CRAFT_ITEMS
+    }
+
+    @ConfigItem(
+            keyName = "leatherMode",
+            name = "Leather Mode",
+            description = "Select what to do with leather",
+            position = 0,
+            section = leatherSection
+    )
+    default LeatherMode leatherMode() {
+        return LeatherMode.CRAFT_ITEMS;
+    }
+
+    enum TanType {
+        SOFT_LEATHER,
+        HARD_LEATHER
+    }
+
+    @ConfigItem(
+            keyName = "tanType",
+            name = "Tan Type",
+            description = "Type of leather to tan. Only works if Leather Mode is TAN_HIDES.",
+            position = 1,
+            section = leatherSection
+    )
+    default TanType tanType() {
+        return TanType.SOFT_LEATHER;
+    }
+
     @Getter
     enum LeatherItem {
         LEATHER_GLOVES(1059, 1741),

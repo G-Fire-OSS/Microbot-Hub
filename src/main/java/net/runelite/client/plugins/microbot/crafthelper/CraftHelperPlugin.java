@@ -30,7 +30,7 @@ import java.awt.AWTException;
 @Slf4j
 public class CraftHelperPlugin extends Plugin {
 
-    static final String version = "0.1.2";
+    static final String version = "0.1.3";
 
     @Inject
     @Getter
@@ -43,7 +43,20 @@ public class CraftHelperPlugin extends Plugin {
     private CraftHelperOverlay craftHelperOverlay;
 
 
-    public enum State {
+    public enum CraftHelperMode {
+        POTTERY,
+        LEATHER
+    }
+
+    public enum LeatherState {
+        BANKING,
+        WALKING_TO_TANNER,
+        TANNING,
+        WALKING_TO_BANK,
+        CRAFTING
+    }
+
+    public enum PotteryState {
         BANKING,
         GETTING_WATER,
         CRAFTING,
@@ -54,7 +67,15 @@ public class CraftHelperPlugin extends Plugin {
 
     @Getter
     @Setter
-    private State currentState;
+    private PotteryState potteryState;
+
+    @Getter
+    @Setter
+    private LeatherState leatherState;
+
+    @Getter
+    @Setter
+    private CraftHelperMode currentMode;
 
     @Provides
     CraftHelperConfig provideConfig(ConfigManager configManager) {
@@ -64,7 +85,9 @@ public class CraftHelperPlugin extends Plugin {
     @Override
     protected void startUp() throws AWTException {
         log.info("CraftHelper Plugin started!");
-        currentState = State.BANKING;
+        potteryState = PotteryState.BANKING;
+        leatherState = LeatherState.BANKING;
+        currentMode = config.craftingMode();
         updateAntibanSettings();
 
         if (overlayManager != null) {
@@ -91,6 +114,10 @@ public class CraftHelperPlugin extends Plugin {
         }
 
         updateAntibanSettings();
+
+        if (event.getKey().equals("craftingMode")) {
+            currentMode = config.craftingMode();
+        }
 
         if (event.getKey().equals("devUI")) {
             if (config.devUI()) {

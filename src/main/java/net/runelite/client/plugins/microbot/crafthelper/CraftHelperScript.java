@@ -2,12 +2,14 @@ package net.runelite.client.plugins.microbot.crafthelper;
 
 import lombok.extern.slf4j.Slf4j;
 import net.runelite.api.GameObject;
+import net.runelite.api.NPC;
 import net.runelite.api.coords.WorldPoint;
 import net.runelite.client.plugins.microbot.Microbot;
 import net.runelite.client.plugins.microbot.Script;
 import net.runelite.client.plugins.microbot.util.bank.Rs2Bank;
 import net.runelite.client.plugins.microbot.util.gameobject.Rs2GameObject;
 import net.runelite.client.plugins.microbot.util.inventory.Rs2Inventory;
+import net.runelite.client.plugins.microbot.util.npc.Rs2Npc;
 import net.runelite.client.plugins.microbot.util.player.Rs2Player;
 import net.runelite.client.plugins.microbot.util.walker.Rs2Walker;
 import net.runelite.client.plugins.microbot.util.widget.Rs2Widget;
@@ -30,14 +32,23 @@ public class CraftHelperScript extends Script {
     private static final int BUCKET_OF_WATER_ID = 1929;
     private static final int NEEDLE_ID = 1733;
     private static final int THREAD_ID = 1734;
+    private static final int COWHIDE_ID = 1739;
+    private static final int SOFT_LEATHER_ID = 1741;
+    private static final int HARD_LEATHER_ID = 1743;
+    private static final int COINS_ID = 995;
 
     // --- Object IDs ---
     private static final int POTTERY_WHEEL_ID = 14887;
     private static final int POTTERY_OVEN_ID = 11601;
 
+    // --- NPC IDs ---
+    private static final int ELLIS_NPC_ID = 545;
+
     // --- Locations ---
     private static final WorldPoint BARBARIAN_VILLAGE_POTTERY_WHEEL = new WorldPoint(3086, 3409, 0);
     private static final WorldPoint BARBARIAN_VILLAGE_POTTERY_OVEN = new WorldPoint(3085, 3406, 0);
+    private static final WorldPoint AL_KHARID_BANK = new WorldPoint(3268, 3167, 0);
+    private static final WorldPoint ELLIS_LOCATION = new WorldPoint(3273, 3191, 0);
 
     @Inject
     public CraftHelperScript(CraftHelperConfig config) {
@@ -60,14 +71,14 @@ public class CraftHelperScript extends Script {
                     return;
                 }
 
-                if (Rs2Player.isMoving() && this.plugin.getCurrentState() != CraftHelperPlugin.State.WALKING) {
+                if (Rs2Player.isMoving() && this.plugin.getPotteryState() != CraftHelperPlugin.PotteryState.WALKING && this.plugin.getLeatherState() != CraftHelperPlugin.LeatherState.WALKING_TO_TANNER && this.plugin.getLeatherState() != CraftHelperPlugin.LeatherState.WALKING_TO_BANK) {
                     return;
                 }
 
                 // Main logic switch
-                switch (config.craftingMode()) {
-                    case CLAY:
-                        handleClay();
+                switch (plugin.getCurrentMode()) {
+                    case POTTERY:
+                        handlePottery();
                         break;
                     case LEATHER:
                         handleLeather();
@@ -82,8 +93,8 @@ public class CraftHelperScript extends Script {
     }
 
     // --- Clay Mode Handler ---
-    private void handleClay() {
-        switch (config.clayMode()) {
+    private void handlePottery() {
+        switch (config.potterySubMode()) {
             case MAKE_SOFT_CLAY:
                 handleMakeSoftClay();
                 break;
@@ -95,11 +106,138 @@ public class CraftHelperScript extends Script {
 
     // --- Leather Mode Handler ---
     private void handleLeather() {
-        determineLeatherState();
+        switch (config.leatherMode()) {
+            case TAN_HIDES:
+                handleLeatherTanning();
+                break;
+            case CRAFT_ITEMS:
+                handleLeatherCraftingItems();
+                break;
+        }
+    }
 
-        switch (plugin.getCurrentState()) {
+    private void handleLeatherTanning() {
+        determineLeatherTanningState();
+
+        switch (plugin.getLeatherState()) {
             case BANKING:
-                handleLeatherBanking();
+                handleLeatherTanningBanking();
+                break;
+            case WALKING_TO_TANNER:
+                handleWalkingToTanner();
+                break;
+            case TANNING:
+                handleTanning();
+                break;
+            case WALKING_TO_BANK:
+                handleWalkingToBank();
+                break;
+        }
+    }
+
+    private void determineLeatherTanningState() {
+        boolean hasCowhides = Rs2Inventory.hasItem(COWHIDE_ID);
+        boolean hasSoftLeather = Rs2Inventory.hasItem(SOFT_LEATHER_ID);
+        boolean hasHardLeather = Rs2Inventory.hasItem(HARD_LEATHER_ID);
+
+        if (hasCowhides) {
+            plugin.setLeatherState(CraftHelperPlugin.LeatherState.WALKING_TO_TANNER);
+        } else if (hasSoftLeather || hasHardLeather) {
+            plugin.setLeatherState(CraftHelperPlugin.LeatherState.WALKING_TO_BANK);
+        } else {
+            plugin.setLeatherState(CraftHelperPlugin.LeatherState.BANKING);
+        }
+    }
+
+    private void handleLeatherTanningBanking() {
+        if (!Rs2Bank.isOpen()) {
+            Rs2Bank.walkToBankAndUseBank();
+            return;
+        }
+
+        if (Rs2Inventory.hasItem(SOFT_LEATHER_ID)) {
+            Rs2Bank.depositAll(SOFT_LEATHER_ID);
+            sleepUntil(() -> !Rs2Inventory.hasItem(SOFT_LEATHER_ID));
+        }
+        if (Rs2Inventory.hasItem(HARD_LEATHER_ID)) {
+            Rs2Bank.depositAll(HARD_LEATHER_ID);
+            sleepUntil(() -> !Rs2Inventory.hasItem(HARD_LEATHER_ID));
+        }
+
+        if (!Rs2Inventory.hasItem(COWHIDE_ID)) {
+            if (!Rs2Bank.hasItem(COWHIDE_ID)) {
+                Microbot.showMessage("You don't have any more cowhides.");
+                shutdown();
+                return;
+            }
+            Rs2Bank.withdrawAll(COWHIDE_ID);
+            sleepUntil(() -> Rs2Inventory.hasItem(COWHIDE_ID));
+        }
+
+        // Withdraw coins for tanning
+        int costPerHide = config.tanType() == CraftHelperConfig.TanType.SOFT_LEATHER ? 1 : 3;
+        int hidesToTan = Rs2Inventory.count(COWHIDE_ID);
+        int totalCost = hidesToTan * costPerHide;
+
+        if (!Rs2Inventory.hasItem(COINS_ID) || Rs2Inventory.count(COINS_ID) < totalCost) {
+            if (!Rs2Bank.hasItem(COINS_ID) || Rs2Bank.count(COINS_ID) < totalCost) {
+                Microbot.showMessage("Not enough coins to tan hides.");
+                shutdown();
+                return;
+            }
+            Rs2Bank.withdrawX(COINS_ID, totalCost);
+            sleepUntil(() -> Rs2Inventory.hasItem(COINS_ID) && Rs2Inventory.count(COINS_ID) >= totalCost);
+        }
+
+        Rs2Bank.closeBank();
+        sleepUntil(() -> !Rs2Bank.isOpen());
+    }
+
+    private void handleWalkingToTanner() {
+        if (Rs2Player.getWorldLocation().distanceTo(ELLIS_LOCATION) > 5) {
+            Rs2Walker.walkTo(ELLIS_LOCATION);
+        } else {
+            plugin.setLeatherState(CraftHelperPlugin.LeatherState.TANNING);
+        }
+    }
+
+    private void handleTanning() {
+        NPC ellis = Rs2Npc.getNpc(ELLIS_NPC_ID);
+        if (ellis == null) {
+            log.info("Ellis not found.");
+            return;
+        }
+
+        if (Rs2Widget.getWidget(219, 1) == null) { // Check if trade interface is open
+            Rs2Npc.interact(ellis, "Trade");
+            sleepUntil(() -> Rs2Widget.getWidget(219, 1) != null, 5000);
+        }
+
+        if (Rs2Widget.getWidget(219, 1) != null) {
+            if (config.tanType() == CraftHelperConfig.TanType.SOFT_LEATHER) {
+                Rs2Widget.clickWidget(219, 1); // First option for soft leather
+            } else {
+                Rs2Widget.clickWidget(219, 2); // Second option for hard leather
+            }
+            sleepUntil(() -> !Rs2Inventory.hasItem(COWHIDE_ID), getCraftingTimeout());
+        }
+    }
+
+    private void handleWalkingToBank() {
+        if (Rs2Player.getWorldLocation().distanceTo(AL_KHARID_BANK) > 5) {
+            Rs2Walker.walkTo(AL_KHARID_BANK);
+        } else {
+            plugin.setLeatherState(CraftHelperPlugin.LeatherState.BANKING);
+        }
+    }
+
+    // --- Leather Crafting Items Handler ---
+    private void handleLeatherCraftingItems() {
+        determineLeatherCraftingState();
+
+        switch (plugin.getLeatherState()) {
+            case BANKING:
+                handleLeatherCraftingBanking();
                 break;
             case CRAFTING:
                 handleLeatherCrafting();
@@ -107,18 +245,18 @@ public class CraftHelperScript extends Script {
         }
     }
 
-    private void determineLeatherState() {
+    private void determineLeatherCraftingState() {
         int leatherId = config.leatherItem().getLeatherId();
         boolean hasLeather = Rs2Inventory.hasItem(leatherId);
 
         if (hasLeather) {
-            plugin.setCurrentState(CraftHelperPlugin.State.CRAFTING);
+            plugin.setLeatherState(CraftHelperPlugin.LeatherState.CRAFTING);
         } else {
-            plugin.setCurrentState(CraftHelperPlugin.State.BANKING);
+            plugin.setLeatherState(CraftHelperPlugin.LeatherState.BANKING);
         }
     }
 
-    private void handleLeatherBanking() {
+    private void handleLeatherCraftingBanking() {
         if (!Rs2Bank.isOpen()) {
             Rs2Bank.walkToBankAndUseBank();
             return;
@@ -193,7 +331,7 @@ public class CraftHelperScript extends Script {
 
         determineSoftClayState();
 
-        switch (plugin.getCurrentState()) {
+        switch (plugin.getPotteryState()) {
             case BANKING:
                 handleSoftClayBanking();
                 break;
@@ -225,24 +363,24 @@ public class CraftHelperScript extends Script {
 
         if (!hasClay && hasSoftClay) {
             if (hasEmptyBuckets && !isNearBank()) {
-                plugin.setCurrentState(CraftHelperPlugin.State.GETTING_WATER);
+                plugin.setPotteryState(CraftHelperPlugin.PotteryState.GETTING_WATER);
             } else {
-                plugin.setCurrentState(CraftHelperPlugin.State.BANKING);
+                plugin.setPotteryState(CraftHelperPlugin.PotteryState.BANKING);
             }
             return;
         }
 
         if (hasClay && hasWaterBuckets) {
-            plugin.setCurrentState(CraftHelperPlugin.State.CRAFTING);
+            plugin.setPotteryState(CraftHelperPlugin.PotteryState.CRAFTING);
             return;
         }
 
         if (hasClay && hasEmptyBuckets) {
-            plugin.setCurrentState(CraftHelperPlugin.State.GETTING_WATER);
+            plugin.setPotteryState(CraftHelperPlugin.PotteryState.GETTING_WATER);
             return;
         }
 
-        plugin.setCurrentState(CraftHelperPlugin.State.BANKING);
+        plugin.setPotteryState(CraftHelperPlugin.PotteryState.BANKING);
     }
 
 
@@ -294,7 +432,7 @@ public class CraftHelperScript extends Script {
 
         if (waterSource != null) {
             if (waterSource.getWorldLocation().distanceTo(Rs2Player.getWorldLocation()) > 8) {
-                plugin.setCurrentState(CraftHelperPlugin.State.WALKING);
+                plugin.setPotteryState(CraftHelperPlugin.PotteryState.WALKING);
                 Rs2Walker.walkTo(waterSource.getWorldLocation());
                 return;
             }
@@ -324,7 +462,7 @@ public class CraftHelperScript extends Script {
     private void handleMakePottery() {
         determinePotteryState();
 
-        switch (plugin.getCurrentState()) {
+        switch (plugin.getPotteryState()) {
             case BANKING:
                 handlePotteryBanking();
                 break;
@@ -348,13 +486,13 @@ public class CraftHelperScript extends Script {
         boolean hasSoftClay = Rs2Inventory.hasItem(SOFT_CLAY_ID);
 
         if (hasSoftClay) {
-            plugin.setCurrentState(CraftHelperPlugin.State.USING_POTTERY_WHEEL);
+            plugin.setPotteryState(CraftHelperPlugin.PotteryState.USING_POTTERY_WHEEL);
         } else if (hasUnfiredPottery) {
-            plugin.setCurrentState(CraftHelperPlugin.State.FIRING_POTTERY);
+            plugin.setPotteryState(CraftHelperPlugin.PotteryState.FIRING_POTTERY);
         } else if (hasFiredPottery) {
-            plugin.setCurrentState(CraftHelperPlugin.State.BANKING);
+            plugin.setPotteryState(CraftHelperPlugin.PotteryState.BANKING);
         } else {
-            plugin.setCurrentState(CraftHelperPlugin.State.BANKING);
+            plugin.setPotteryState(CraftHelperPlugin.PotteryState.BANKING);
         }
     }
 
@@ -385,7 +523,7 @@ public class CraftHelperScript extends Script {
 
     private void handleUsingPotteryWheel() {
         if (Rs2Player.getWorldLocation().distanceTo(BARBARIAN_VILLAGE_POTTERY_WHEEL) > 10) {
-            plugin.setCurrentState(CraftHelperPlugin.State.WALKING);
+            plugin.setPotteryState(CraftHelperPlugin.PotteryState.WALKING);
             Rs2Walker.walkTo(BARBARIAN_VILLAGE_POTTERY_WHEEL);
             return;
         }
@@ -410,7 +548,7 @@ public class CraftHelperScript extends Script {
 
     private void handleFiringPottery() {
         if (Rs2Player.getWorldLocation().distanceTo(BARBARIAN_VILLAGE_POTTERY_OVEN) > 10) {
-            plugin.setCurrentState(CraftHelperPlugin.State.WALKING);
+            plugin.setPotteryState(CraftHelperPlugin.PotteryState.WALKING);
             Rs2Walker.walkTo(BARBARIAN_VILLAGE_POTTERY_OVEN);
             return;
         }

@@ -35,12 +35,27 @@ public class CraftHelperOverlay extends OverlayPanel {
                     .color(Color.GREEN)
                     .build());
 
-            if (plugin.getCurrentState() != null) {
-                panelComponent.getChildren().add(LineComponent.builder()
-                        .left("Current State:")
-                        .right(plugin.getCurrentState().toString())
-                        .build());
+            String currentState = "Unknown";
+            if (plugin.getCurrentMode() != null) {
+                switch (plugin.getCurrentMode()) {
+                    case POTTERY:
+                        if (plugin.getPotteryState() != null) {
+                            currentState = plugin.getPotteryState().toString();
+                        }
+                        break;
+                    case LEATHER:
+                        if (plugin.getLeatherState() != null) {
+                            currentState = plugin.getLeatherState().toString();
+                        }
+                        break;
+                }
             }
+
+            panelComponent.getChildren().add(LineComponent.builder()
+                    .left("Current State:")
+                    .right(currentState)
+                    .build());
+
             panelComponent.getChildren().add(LineComponent.builder()
                     .left("Location:")
                     .right(String.valueOf(Rs2Player.getWorldLocation()))
