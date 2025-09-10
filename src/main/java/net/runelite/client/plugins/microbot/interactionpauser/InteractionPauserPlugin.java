@@ -36,22 +36,22 @@ public class InteractionPauserPlugin extends Plugin implements MouseListener {
     static final String version = "0.1";
 
     @Inject
-    private Client client;
+    Client client;
 
     @Inject
-    private InteractionPauserConfig config;
+    InteractionPauserConfig config;
 
     @Inject
-    private OverlayManager overlayManager;
+    OverlayManager overlayManager;
 
     @Inject
-    private InteractionPauserOverlay overlay;
+    InteractionPauserOverlay overlay;
 
     @Inject
-    private MouseManager mouseManager;
+    MouseManager mouseManager;
 
     @Inject
-    private ScheduledExecutorService scheduledExecutorService;
+    ScheduledExecutorService scheduledExecutorService;
 
     @Getter
     private boolean paused;
